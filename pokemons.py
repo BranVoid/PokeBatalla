@@ -15,11 +15,12 @@ def get_pokemon(name):
             'name': pokemon.name,
             'hp': pokemon.stats[0].base_stat,
             'attack': pokemon.stats[1].base_stat,
-            'level': 1,  # Iniciar en nivel 1
+            'level': 1,
             'moves': moves,
-            'type': pokemon.types[0].type.name,  # Tomamos el primer tipo
+            'type': pokemon.types[0].type.name,
         }
-    except:
+    except AttributeError:
+        print(f"Error al obtener el Pokémon '{name}'. Verifica el nombre.")
         return None
 
 def get_random_moves(pokemon):

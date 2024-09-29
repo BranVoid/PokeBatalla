@@ -40,7 +40,7 @@ def iniciar_batalla(player):
     else:
         print(f"¡Has derrotado a {wild_pokemon['name']}!")
 
-def calcular_dano(move, attacker, defender):
+def calcular_dano(move, defender):
     base_damage = move['power']
     effectiveness = efectividad.get(move['type'], {}).get(defender['type'], 1)
     total_damage = base_damage * effectiveness
