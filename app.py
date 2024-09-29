@@ -1,5 +1,5 @@
-from pokemons import get_pokemon
-from batalla import iniciar_batalla
+from pokemons import get_pokemon, get_wild_pokemon
+from batalla import iniciar_batalla, batalla_con_lider
 
 def main():
     print("Bienvenido al juego de Pokémon!")
@@ -17,11 +17,29 @@ def main():
         opcion = input().strip().lower()
         if opcion == "si":
             iniciar_batalla(player_pokemon)
+            if player_pokemon['level'] >= 16:
+                print(f"¡{player_pokemon['name']} ha alcanzado el nivel de evolución!")
+                evolver = input("¿Quieres evolucionar? (si/no): ").strip().lower()
+                if evolver == "si":
+                    player_pokemon = evolver_pokemon(player_pokemon)
+                    print(f"{player_pokemon['name']} ha evolucionado!")
+                batalla_con_lider(player_pokemon)
         elif opcion == "no":
             print("Gracias por jugar!")
             break
         else:
             print("Opción no válida.")
+
+def evolver_pokemon(pokemon):
+    # Aquí puedes definir la lógica de evolución
+    if pokemon['name'] == 'charmander':
+        return get_pokemon('charmeleon')
+    elif pokemon['name'] == 'squirtle':
+        return get_pokemon('wartortle')
+    elif pokemon['name'] == 'bulbasaur':
+        return get_pokemon('ivysaur')
+    else:
+        return pokemon  # Sin evolución
 
 if __name__ == "__main__":
     main()
