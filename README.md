@@ -1,5 +1,5 @@
 # PokeBatalla
- Un proyecto con python que busca hacer algo similar a pokemon.
+Un proyecto con python que busca hacer algo similar a pokemon.
 # Práctica 4: Revisión de Código y Refactorización
 
 ## **Objetivo**
@@ -160,6 +160,3 @@ def main():
 
 ## **Conclusiones**
 La refactorización y corrección de los bugs, code smells y vulnerabilidades identificados mejoró la calidad del proyecto. Al aplicar las prácticas de Clean Code, el código resultante es más fácil de leer, mantener y menos propenso a errores.
-
-
-
